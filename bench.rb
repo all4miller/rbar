@@ -21,7 +21,6 @@ Benchmark.bm do |benchmark|
   benchmark.report("rbar") do
     ActiveRecord::Base.transaction do
       RBAR.execute
-      puts Company.sum(:link_count)
       raise ActiveRecord::Rollback
     end
   end
@@ -29,7 +28,6 @@ Benchmark.bm do |benchmark|
   benchmark.report("lightning") do
     ActiveRecord::Base.transaction do
       Lightning.execute
-      puts Company.sum(:link_count)
       raise ActiveRecord::Rollback
     end
   end
