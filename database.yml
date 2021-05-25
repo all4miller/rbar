@@ -1,0 +1,6 @@
+default:
+  adapter:  postgresql
+  host:     localhost
+  database: rbar
+  username: postgres
+  pool:     5
