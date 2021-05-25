@@ -11,6 +11,12 @@ COMPANIES_COUNT = 1000
 
 Setup.execute
 
+# warmup
+ActiveRecord::Base.transaction do
+  RBAR.execute
+  raise ActiveRecord::Rollback
+end
+
 Benchmark.bm do |benchmark|
   benchmark.report("rbar") do
     ActiveRecord::Base.transaction do
