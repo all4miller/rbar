@@ -3,6 +3,8 @@
 Demo repo showing typical "service" class that loops over 1k "company" models
 and updates stuff.
 
+*NB# only setup to work with PostgreSQL*
+
 Sample results on my laptop:
 
 ```
