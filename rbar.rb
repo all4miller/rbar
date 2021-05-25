@@ -6,7 +6,7 @@ class RBAR
   end
 
   def link_count
-    @company.links.where(created_at: Time.now.getutc.beginning_of_month - 1.month..Time.now.getutc.end_of_month - 1.month).count
+    @company.links.where("created_at between '2021-04-01 00:00:00' and '2021-04-30 23:59:59'").count
   end
 
   def update_counts
